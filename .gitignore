@@ -1,0 +1,12 @@
+.venv
+/venv
+ 
+.env
+ 
+# project without any db
+
+__pycache__/
+
+db.sqlite3
+
+.DS_Store
