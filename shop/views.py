@@ -1,7 +1,11 @@
 from django.shortcuts import render , HttpResponse
+from .models import Product
+
 
 def home(request):
-  return render(request,'shop/index.html')
+  products=Product.objects.all() #[5]
+  context={'products':products}
+  return render(request,'shop/index.html',context)
 
 
 
