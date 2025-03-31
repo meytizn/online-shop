@@ -29,7 +29,7 @@ class Order(models.Model):
     order_date=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
     
     
 
@@ -46,7 +46,7 @@ class OrderItem(models.Model):
     product_cost=models.DecimalField( max_digits=10, decimal_places=0)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 
@@ -55,7 +55,7 @@ class Invoice(models.Model):
     invoice=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 
@@ -66,13 +66,13 @@ class Transaction(models.Model):
         ('failed','failed'),
         ('completed','completed'),
     )
-    Invoice=models.ForeignKey(Invoice, on_delete=models.SET_NULL,null=True)
+    Invoice=models.ForeignKey(Invoice, on_delete=models.SET_NULL,null=True)    #dictionary attention 
     transaction_date=models.DateTimeField(auto_now_add=True)
     amount=models.DecimalField( max_digits=10, decimal_places=0)
     status=models.CharField( max_length=10,choices= STATUS_CHOICES,default='pending')
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 # Create your models here.
